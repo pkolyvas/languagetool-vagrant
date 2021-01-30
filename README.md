@@ -20,5 +20,5 @@ Currently the `Vagrantfile` uses `curl` to download files instead of `wget` beca
 Letsencrypt and nginx are installed as part of the vagrant file should you want to setup an HTTPS reverse proxy (recommended).
 
 You're on your own for configuring these but here's what I do:
-- Run `certbot certonly --dns-route53 -d laguagetool.example.com`. I like this method because I'll never expose the LanguageTool box to the internet, but I can still get an HTTPS certificate for use within the network I control. 
+- Run `certbot certonly --dns-route53 -d laguagetool.example.com`. I like the Route53 (or equivalent) method because I'll never expose the LanguageTool box to the internet, but I can still get an HTTPS certificate for use within the network I control. 
 - Edit the default `nginx` configuration in `/etc/nginx/sites-available/default` to include a name for your host and configure the proxy parameters and SSL/TLS options.

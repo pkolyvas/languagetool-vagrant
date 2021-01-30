@@ -22,7 +22,7 @@ Vagrant.configure("2") do |config|
   config.vm.provision "shell", inline: <<-SHELL
      sudo apt-get update
      sudo apt-get upgrade -y
-     sudo apt-get install unzip openjdk-11-jre-headless letsencrypt -y
+     sudo apt-get install unzip openjdk-11-jre-headless letsencrypt nginx -y
      curl https://languagetool.org/download/LanguageTool-stable.zip -o LanguageTool.zip
      unzip LanguageTool.zip -d LanguageTool
      # TODO: Curl the directory and retreive the latest english ngram data
