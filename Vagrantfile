@@ -24,11 +24,11 @@ Vagrant.configure("2") do |config|
      sudo apt-get upgrade -y
      sudo apt-get install unzip openjdk-11-jre-headless letsencrypt nginx -y
      curl https://languagetool.org/download/LanguageTool-stable.zip -o LanguageTool.zip
-     unzip LanguageTool.zip -d LanguageTool
+     unzip LanguageTool.zip
      # TODO: Curl the directory and retreive the latest english ngram data
      curl https://languagetool.org/download/ngram-data/ngrams-en-20150817.zip -o en-ngrams.zip
-     mkdir -p ./LanguageTool/en
-     uzip en-ngrams.zip -d ./LanguageTool/en/.
-     java -cp languagetool-server.jar org.languagetool.server.HTTPServer --port 8081 --allow-origin "*" --languageModel /home/vagrant/LanguageTool/en
+     mkdir -p ./LanguageTool-5.2/en
+     unzip en-ngrams.zip -d ./LanguageTool-5.2/en/.
+     java -cp /home/vagrant/LanguageTool-5.2/languagetool-server.jar org.languagetool.server.HTTPServer --port 8081 --allow-origin "*" --languageModel /home/vagrant/LanguageTool/en
    SHELL
 end
