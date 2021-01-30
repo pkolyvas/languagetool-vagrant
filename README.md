@@ -4,9 +4,9 @@ This is a simple vagrantfile that will download and configure a local version of
 
 This install closely follows the [instructions](https://dev.languagetool.org/http-server) available for offline development with LanguageTool.
 
-It will also [download and install the ngrams](https://dev.languagetool.org/finding-errors-using-n-gram-data) for the English Language.
+It will also [download and install the ngrams](https://dev.languagetool.org/finding-errors-using-n-gram-data) for the English Language. However the English-language ngram data is, as of this update, over 8GB in size. Fair warning.
 
-Currently the `Vagrantfile` uses `curl` to download files instead of `wget` because the LanguageTool server will throttle multiple requests from the same IP - an issue I faced while trying to get things right. Totally reasonable on their part.
+Currently the `Vagrantfile` uses `curl` to download files instead of `wget` because the LanguageTool server will throttle multiple requests from the same IP - an issue I faced while trying to get things right. Totally reasonable on their part. 
 
 ## Using this box
 - Ensure you have vagrant and virtualbox installed.

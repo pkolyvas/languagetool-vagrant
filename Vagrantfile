@@ -20,11 +20,12 @@ Vagrant.configure("2") do |config|
   config.vm.synced_folder "/Users/pkolyvas/Code/", "/home/vagrant/code/"
 
   config.vm.provision "shell", inline: <<-SHELL
-     sudo apt-get update -y
+     sudo apt-get update
      sudo apt-get upgrade -y
      sudo apt-get install unzip openjdk-11-jre-headless letsencrypt -y
      curl https://languagetool.org/download/LanguageTool-stable.zip -o LanguageTool.zip
      unzip LanguageTool.zip -d LanguageTool
+     # TODO: Curl the directory and retreive the latest english ngram data
      curl https://languagetool.org/download/ngram-data/ngrams-en-20150817.zip -o en-ngrams.zip
      mkdir -p ./LanguageTool/en
      uzip en-ngrams.zip -d ./LanguageTool/en/.
