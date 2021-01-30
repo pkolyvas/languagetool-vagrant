@@ -6,6 +6,8 @@ This install closely follows the [instructions](https://dev.languagetool.org/htt
 
 It will also [download and install the ngrams](https://dev.languagetool.org/finding-errors-using-n-gram-data) for the English Language. However the English-language ngram data is, as of this update, over 8GB in size. Fair warning.
 
+If you do wish to skip the ngram data, you'll need to comment out the `curl` request used to download it and remove the `--languageModel` option from the command which starts up the `LanguagTool` server. Reviewing their installation instructions (linked above) would be valuable at that point.
+
 Currently the `Vagrantfile` uses `curl` to download files instead of `wget` because the LanguageTool server will throttle multiple requests from the same IP - an issue I faced while trying to get things right. Totally reasonable on their part. 
 
 ## Using this box
