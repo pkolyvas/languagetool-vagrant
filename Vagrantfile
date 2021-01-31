@@ -29,6 +29,6 @@ Vagrant.configure("2") do |config|
      curl https://languagetool.org/download/ngram-data/ngrams-en-20150817.zip -o en-ngrams.zip
      mkdir -p ./LanguageTool-5.2/en
      unzip en-ngrams.zip -d ./LanguageTool-5.2/en/.
-     java -cp /home/vagrant/LanguageTool-5.2/languagetool-server.jar org.languagetool.server.HTTPServer --port 8081 --allow-origin "*" --languageModel /home/vagrant/LanguageTool/en
+     java -cp /home/vagrant/LanguageTool-5.2/languagetool-server.jar org.languagetool.server.HTTPServer --port 8082 --allow-origin "*" --languageModel /home/vagrant/LanguageTool-5.2/en &
    SHELL
 end
